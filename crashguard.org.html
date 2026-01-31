@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crashguard.org - Kenif - Programmer (Powered By ElNexo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066ff;
+            --secondary: #00c8ff;
+            --bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-sub: #86868b;
+            --accent-bg: #f5f5f7;
+            --white: #ffffff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('cursor.png') 16 16, auto !important;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 10% 0 10%;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 650px;
+            animation: fadeInUp 1s var(--ease);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .main-banner-card {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: url('banner.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .tagline-top {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+            transition: all 0.3s var(--ease);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 102, 255, 0.3);
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 150px 10%;
+            background: var(--accent-bg);
+            border-radius: 100px 100px 0 0;
+            margin-top: -50px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 100px auto;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        /* STATS SECTION */
+        .stats {
+            padding: 150px 10%;
+            text-align: center;
+        }
+
+        .stat-flex {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .stat-item h4 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-item p {
+            font-weight: 600;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* INTERACTIVE EXPLANATION */
+        .cta-section {
+            padding: 150px 10%;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            border-radius: 80px;
+            margin: 0 20px 50px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s var(--ease);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 100px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .powered {
+            color: var(--text-sub);
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .powered span {
+            color: var(--primary);
+        }
+
+        /* CUSTOM SCROLLBAR BAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d2d2d7;
+            border-radius: 10px;
+            border: 3px solid var(--bg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo">crashguard.org</a>
+        <div class="nav-links">
+            <a href="#features">Tecnología</a>
+            <a href="#stats">Impacto</a>
+            <a href="#about">Kenif</a>
+            <a href="javascript:void(0)" onclick="handleDownload()" class="btn-primary"
+                style="padding: 12px 25px; font-size: 0.9rem; margin-top: 0; box-shadow: none;">Descargar</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tagline-top">Professional Optimization</span>
+            <h1>La estabilidad que tu <span>PC merece.</span></h1>
+            <p class="hero-desc">Lleva tu experiencia gaming al siguiente nivel con crashguard.org. Optimizamos el
+                núcleo de tu sistema para eliminar crasheos y garantizar una fluidez absoluta sin procesos en segundo
+                plano.</p>
+            <a href="javascript:void(0)" onclick="handleDownload()" class="btn-primary">Descargar Ahora</a>
+        </div>
+        <div class="hero-image">
+            <div class="main-banner-card"></div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="section-header scroll-reveal">
+            <h2>Diseñado para el Rendimiento.</h2>
+            <p style="font-size: 1.2rem; color: var(--text-sub);">Nuestra tecnología de inyección de kernel pasiva
+                permite que tu hardware trabaje al máximo potencial sin sobrecargar el procesador.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card scroll-reveal">
+                <div class="icon-circle">⚡</div>
+                <h3>Kernel Scheduling</h3>
+                <p>Priorización de hilos a nivel de sistema para una respuesta instantánea en cada click.</p>
+            </div>
+            <div class="feature-card scroll-reveal">
+                <div class="icon-circle">🧠</div>
+                <h3>Memory Management</h3>
+                <p>Limpieza profunda de la Standby List de Windows para prevenir bloqueos de memoria.</p>
+            </div>
+            <div class="feature-card scroll-reveal">
+                <div class="icon-circle">🎮</div>
+                <h3>GPU Acceleration</h3>
+                <p>Configuramos el registro para habilitar el máximo rendimiento de tu tarjeta gráfica.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="stats scroll-reveal">
+        <div class="section-header">
+            <h2>Resultados Reales.</h2>
+        </div>
+        <div class="stat-flex">
+            <div class="stat-item">
+                <h4>0%</h4>
+                <p>CPU Overhead</p>
+            </div>
+            <div class="stat-item">
+                <h4>60%</h4>
+                <p>Latencia Reducida</p>
+            </div>
+            <div class="stat-item">
+                <h4>10X</h4>
+                <p>Estabilidad de Frames</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section scroll-reveal">
+        <h2>Únete a la nueva era gaming.</h2>
+        <p style="font-size: 1.4rem; opacity: 0.8; margin-bottom: 50px;">Desarrollado por Kenif con la arquitectura de
+            ElNexo para una estabilidad profesional.</p>
+        <a href="javascript:void(0)" onclick="handleDownload()" class="btn-primary"
+            style="background: #fff; color: #000;">Empezar Optimización Ahora</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">crashguard.org</div>
+        <div class="powered">Kenif - Programmer | <span>Powered By ElNexo</span></div>
+        <p style="font-size: 0.8rem; color: var(--text-sub);">&copy; 2026 CrashGuard Pro Edition. Todos los derechos
+            reservados.</p>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        function handleDownload() {
+            // Redirect directly to the GitHub repository
+            window.location.href = 'https://github.com/elnexocenter/crashguard';
+        }
+    </script>
+</body>
+
+</html>
