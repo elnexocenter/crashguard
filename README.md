@@ -70,11 +70,6 @@ Para que los protocolos de estabilidad surtan efecto, el entorno debe cumplir co
   <img src="https://i.imgur.com/uDn9Y8N.png" alt="CrashGuard Logo" width="100">
   
   <br>
-  
-  <img src="https://i.imgur.com/N72RjNM.png" alt="CrashGuard Banner" width="100%">
-  
-  <br>
-  <br>
 
   <p>Desarrollado en <b><a href="https://elnexocenter.com">elnexocenter.com</a></b></p>
 </div>
