@@ -13,9 +13,9 @@
 
 ---
 
-## CRASHGUARD V1.0
+## CRASHGUARD v1.0
 
-**CrashGuard** es una solución integral de optimización diseñada para mitigar fallos críticos y mejorar la estabilidad de videojuegos en entornos Windows. Este repositorio centraliza scripts de automatización que gestionan la asignación de recursos del sistema, reduciendo drásticamente los cierres inesperados (crashes) provocados por saturación de hardware o procesos inestables del kernel.
+**CrashGuard v1.0** es una solución integral de optimización diseñada para mitigar fallos críticos y mejorar la estabilidad de videojuegos en entornos Windows. Este repositorio centraliza scripts de automatización que gestionan la asignación de recursos del sistema, reduciendo drásticamente los cierres inesperados (crashes) provocados por saturación de hardware o procesos inestables del kernel.
 
 ### ARQUITECTURA DEL SISTEMA
 
