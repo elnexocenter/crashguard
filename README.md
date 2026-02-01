@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/800x200/005f73/ffffff?text=CRASHGUARD+PRO" alt="CrashGuard Banner" width="100%">
+  <img src=["https://via.placeholder.com/800x200/005f73/ffffff?text=CRASHGUARD+PRO](https://i.imgur.com/N72RjNM.png)" alt="CrashGuard Banner" width="100%">
   
   <br>
 
